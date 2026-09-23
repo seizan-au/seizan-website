@@ -46,6 +46,12 @@
 </style>
 <style>
 .hv1:hover{color: #EFE9DF;}
+[data-barnav] a{white-space: nowrap;}
+[data-barnav]::-webkit-scrollbar{display: none;}
+@media (max-width: 760px){
+  [data-bar] [data-barlink]:not([data-barlink="#building"]):not([data-barlink="#start"]){display: none;}
+}
+[data-fg] .hv1:hover{color: #2B2926;}
 .hv2:hover{color: #EFE9DF;}
 .hv3:hover{color: #EFE9DF;}
 .hv4:hover{color: #EFE9DF;}
@@ -75,6 +81,12 @@
     <span data-ticker-label="1" style="display: block;">Hero</span>
   </div>
 
+  <div data-bar="1" style="position: fixed; top: 0; left: 0; right: 0; z-index: 45; background: rgba(43,41,38,0.94); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); border-bottom: 1px solid rgba(111,106,98,0.28); opacity: 0; transform: translateY(-100%); transition: opacity 420ms ease, transform 520ms cubic-bezier(0.16,0.84,0.3,1); pointer-events: none;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 13px clamp(22px, 5vw, 72px); max-width: 1440px; margin: 0 auto;">
+      <a href="#top" style="font-size: 12px; font-weight: 300; letter-spacing: 0.4em; text-indent: 0.4em; color: #EFE9DF; flex: 0 0 auto;">SEIZAN</a>
+      <nav data-barnav="1" style="display: flex; gap: clamp(12px, 2.2vw, 28px); font-size: 10px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; overflow-x: auto; scrollbar-width: none;"><a href="#familiar" data-barlink="#familiar" style="color: #C9C2B7; transition: color 260ms ease;">Sound familiar</a><a href="#shapes" data-barlink="#shapes" style="color: #C9C2B7; transition: color 260ms ease;">The work</a><a href="#building" data-barlink="#building" style="color: #C9C2B7; transition: color 260ms ease;">Products</a><a href="#how" data-barlink="#how" style="color: #C9C2B7; transition: color 260ms ease;">How we work</a><a href="#why" data-barlink="#why" style="color: #C9C2B7; transition: color 260ms ease;">Why Seizan</a><a href="#start" data-barlink="#start" style="color: #C9C2B7; transition: color 260ms ease;">Start</a></nav>
+    </div>
+  </div>
   <div style="position: relative; z-index: 1;">
 
     <header data-sec="Header" style="display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; padding: 22px clamp(22px, 5vw, 72px); border-bottom: 1px solid rgba(111,106,98,0.28);">
@@ -106,14 +118,16 @@
       <nav style="display: flex; gap: clamp(14px, 3vw, 34px); flex-wrap: wrap;">
         <a href="#familiar" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv1">Sound familiar</a>
         <a href="#shapes" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv2">The work</a>
+        <a href="#building" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv3">Products</a>
         <a href="#how" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv3">How we work</a>
         <a href="#why" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv4">Why Seizan</a>
         <a href="#start" style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;" class="hv5">Start</a>
       </nav>
     </header>
 
-    <section id="top" data-sec="Hero" style="padding: clamp(48px, 9vw, 96px) clamp(22px, 5vw, 72px) clamp(72px, 9vw, 96px);">
-      <div style="max-width: 1440px; margin: 0 auto;">
+    <section id="top" data-sec="Hero" style="position: relative; overflow: hidden; scroll-margin-top: 66px; padding: clamp(48px, 9vw, 96px) clamp(22px, 5vw, 72px) clamp(72px, 9vw, 96px);">
+      <canvas id="szstrata" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none;"></canvas>
+      <div style="max-width: 1440px; margin: 0 auto; position: relative; z-index: 1;">
         <div data-parallax="0.04" style="margin-bottom: clamp(34px, 5vw, 72px);">
           <svg viewBox="0 0 460 150" role="img" aria-label="Seizan" style="width: clamp(240px, 32vw, 400px); height: auto; display: block;">
             <defs>
@@ -150,7 +164,7 @@
       </div>
     </section>
 
-    <section id="familiar" data-sec="Sound familiar" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
+    <section id="familiar" data-sec="Sound familiar" style="scroll-margin-top: 66px; padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
           <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">00</span>
@@ -162,6 +176,22 @@
           <div data-cut="1" data-delay="220" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(14px, 2vw, 22px) 0; font-size: clamp(19px, 2.9vw, 40px); font-weight: 200; line-height: 1.25; letter-spacing: -0.015em; text-wrap: pretty; clip-path: inset(0 100% 0 0); transition: clip-path 900ms cubic-bezier(0.16,0.84,0.3,1);">Your best person is the only one who knows how it really works.</div>
           <div data-cut="1" data-delay="330" style="border-top: 1px solid rgba(111,106,98,0.28); border-bottom: 1px solid rgba(111,106,98,0.28); padding: clamp(14px, 2vw, 22px) 0; font-size: clamp(19px, 2.9vw, 40px); font-weight: 200; line-height: 1.25; letter-spacing: -0.015em; text-wrap: pretty; clip-path: inset(0 100% 0 0); transition: clip-path 900ms cubic-bezier(0.16,0.84,0.3,1);">You're paying for software that does a fraction of what you were sold.</div>
         </div>
+        <div data-split="1" style="margin-top: clamp(34px, 5vw, 62px);">
+          <svg viewBox="0 0 1200 210" preserveAspectRatio="none" aria-hidden="true" style="width: 100%; height: clamp(120px, 15vw, 210px); display: block; overflow: visible;">
+            <g fill="none" stroke="rgba(111,106,98,0.42)" stroke-width="1.4" vector-effect="non-scaling-stroke">
+              <path data-sp="1" d="M0,105 H400"/>
+              <path data-sp="1" d="M400,105 C520,105 520,18 640,18 H1150"/>
+              <path data-sp="1" d="M400,105 H1150"/>
+              <path data-sp="1" d="M400,105 C520,105 520,192 640,192 H1150"/>
+            </g>
+            <g>
+              <rect data-sqr="1" x="394" y="99" width="12" height="12" fill="#C6D93C" stroke="none"/>
+              <rect data-sqr="1" x="1150" y="12" width="13" height="13" fill="none" stroke="rgba(111,106,98,0.8)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+              <rect data-sqr="1" x="1150" y="99" width="13" height="13" fill="none" stroke="rgba(111,106,98,0.8)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+              <rect data-sqr="1" x="1150" y="186" width="13" height="13" fill="none" stroke="rgba(111,106,98,0.8)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+            </g>
+          </svg>
+        </div>
         <div data-reveal="1" data-delay="120" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 22px 48px; margin-top: 48px;">
           <span style="font-size: clamp(17px, 1.6vw, 20px); font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 30em;">We start by living it with you, then find where it's actually costing you.</span>
           <a href="https://discovery.seizan.com.au" style="display: inline-flex; align-items: baseline; gap: 14px; font-size: 11px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; border-bottom: 1px solid rgba(111,106,98,0.4); padding-bottom: 8px;" class="hv6">Start with five minutes <span style="font-weight: 300;">→</span></a>
@@ -169,11 +199,11 @@
       </div>
     </section>
 
-    <section id="shapes" data-sec="The work" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
+    <section id="shapes" data-sec="The work" data-fg="#2B2926" style="scroll-margin-top: 66px; background: #EFE9DF; color: #2B2926; padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: 34px;">
-          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">01</span>
-          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #C9C2B7;">The work</span>
+          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #57534C;">01</span>
+          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #57534C;">The work</span>
         </div>
         <h2 style="margin: 0 0 clamp(48px, 6vw, 72px); font-size: clamp(30px, 5.4vw, 84px); font-weight: 200; line-height: 1.02; letter-spacing: -0.025em;">
           <span style="display: block; overflow: hidden; padding-bottom: 0.04em;"><span data-wipe="1" style="display: block; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">The work takes three shapes.</span></span>
@@ -184,16 +214,15 @@
             <div data-reveal="1" data-delay="60">
               <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
                 <span style="width: 8px; height: 8px; background: #C6D93C; flex: 0 0 auto;"></span>
-                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;">Available now</span>
+                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #57534C;">Available now</span>
               </div>
-              <div style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7; margin-bottom: 8px;">01</div>
               <h3 style="margin: 0 0 14px; font-size: clamp(28px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.02em;">Discovery</h3>
               <p style="margin: 0 0 22px; font-size: 17px; font-weight: 300; line-height: 1.6; text-wrap: pretty;">A proper look at how your business actually runs, before anyone proposes anything.</p>
               <div style="display: flex; flex-direction: column; gap: 10px;">
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>Five minutes to start — rough answers are perfect</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>We look at the work, not the org chart</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>You get the findings: where the time and money go, and which fix is worth doing first</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>They&#x27;re yours to keep, whatever you decide next</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>Five minutes to start — rough answers are perfect</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>We look at the work, not the org chart</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>You get the findings: where the time and money go, and which fix is worth doing first</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>They&#x27;re yours to keep, whatever you decide next</span></div>
               </div>
             </div>
           </div>
@@ -203,16 +232,15 @@
             <div data-reveal="1" data-delay="200">
               <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
                 <span style="width: 8px; height: 8px; background: #C6D93C; flex: 0 0 auto;"></span>
-                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;">Available now</span>
+                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #57534C;">Available now</span>
               </div>
-              <div style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7; margin-bottom: 8px;">02</div>
               <h3 style="margin: 0 0 14px; font-size: clamp(28px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.02em;">Build &amp; improve</h3>
               <p style="margin: 0 0 22px; font-size: 17px; font-weight: 300; line-height: 1.6; text-wrap: pretty;">We fix the part that is costing you most, and build what is missing. Your systems, your business, your words.</p>
               <div style="display: flex; flex-direction: column; gap: 10px;">
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>Improving the systems you already run</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>Connecting what you have so nothing is entered twice</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>Automating the routine work that eats your admin time</span></div>
-                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #C9C2B7;"><span style="color: #6F6A62;">—</span><span>Building what is missing, where nothing off the shelf fits</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>Improving the systems you already run</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>Connecting what you have so nothing is entered twice</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>Automating the routine work that eats your admin time</span></div>
+                <div style="display: flex; gap: 14px; font-size: 15px; font-weight: 300; line-height: 1.55; color: #57534C;"><span style="color: #6F6A62;">—</span><span>Building what is missing, where nothing off the shelf fits</span></div>
               </div>
             </div>
           </div>
@@ -221,13 +249,12 @@
             <div data-draw="1" data-delay="280" style="height: 1px; background: rgba(111,106,98,0.28); margin-bottom: 22px;"></div>
             <div data-reveal="1" data-delay="340">
               <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
-                <span style="width: 8px; height: 8px; border: 1px solid #C9C2B7; flex: 0 0 auto; box-sizing: border-box;"></span>
-                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7;">In development</span>
+                <span style="width: 8px; height: 8px; border: 1px solid #57534C; flex: 0 0 auto; box-sizing: border-box;"></span>
+                <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: #57534C;">In development</span>
               </div>
-              <div style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7; margin-bottom: 8px;">03</div>
               <h3 style="margin: 0 0 14px; font-size: clamp(28px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.02em;">Products</h3>
               <p style="margin: 0 0 22px; font-size: 17px; font-weight: 300; line-height: 1.6; text-wrap: pretty;">Built as carefully as the work it is built for.</p>
-              <div style="padding-top: 18px; border-top: 1px solid rgba(111,106,98,0.28);"><a href="#building" class="hv1" style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: #C9C2B7; display: inline-flex; gap: 12px; align-items: baseline;">What we&#x27;re building <span style="font-weight: 300;">&#8595;</span></a></div>
+              <div style="padding-top: 18px; border-top: 1px solid rgba(111,106,98,0.28);"><a href="#building" class="hv1" style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; color: #57534C; display: inline-flex; gap: 12px; align-items: baseline;">What we&#x27;re building <span style="font-weight: 300;">&#8595;</span></a></div>
             </div>
           </div>
 
@@ -235,96 +262,101 @@
       </div>
     </section>
 
-    <section id="building" data-sec="What we&#x27;re building" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
+        <section id="building" data-sec="What we&#x27;re building" style="scroll-margin-top: 66px; padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: 34px;">
           <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">02</span>
           <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #C9C2B7;">What we&#x27;re building</span>
         </div>
-        <h2 style="margin: 0 0 clamp(34px, 5vw, 72px); font-size: clamp(30px, 5.4vw, 84px); font-weight: 200; line-height: 1.02; letter-spacing: -0.025em;">
+        <h2 style="margin: 0 0 clamp(22px, 4vw, 48px); font-size: clamp(30px, 5.4vw, 84px); font-weight: 200; line-height: 1.02; letter-spacing: -0.025em;">
           <span style="display: block; overflow: hidden; padding-bottom: 0.04em;"><span data-wipe="1" style="display: block; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">Everything here started as a real problem.</span></span>
         </h2>
-        <div style="border-top: 1px solid rgba(111,106,98,0.28);">
-          <div data-reveal="1" data-delay="0" style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: clamp(22px, 4vw, 72px); align-items: baseline; padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
-            <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;"><span style="width: 8px; height: 8px; background: #C6D93C; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In build</span></div>
-              <div style="font-size: clamp(21px, 2.2vw, 30px); font-weight: 200; letter-spacing: -0.01em; line-height: 1.15;">Seizan Fieldbook</div>
-            </div>
+        <div data-reveal="1" data-delay="0" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(48px, 7vw, 104px) 0;">
+          <div style="display: flex; align-items: center; gap: 13px; margin-bottom: 18px;"><span style="width: 9px; height: 9px; background: #C6D93C; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In build</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 62px); align-items: baseline;">
+            <h3 style="margin: 0; font-size: clamp(36px, 6.4vw, 94px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; min-width: 0;">Fieldbook</h3>
             <div style="min-width: 0;">
-              <div style="font-size: clamp(17px, 1.7vw, 21px); font-weight: 300; line-height: 1.5; text-wrap: pretty;">Takes the paperwork off the job, and the office sees the work as it happens.</div>
-              <div style="margin-top: 8px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #6F6A62; text-wrap: pretty;">Nothing written up later, nothing guessed.</div>
-            </div>
-          </div>
-          <div data-reveal="1" data-delay="90" style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: clamp(22px, 4vw, 72px); align-items: baseline; padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
-            <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;"><span style="width: 8px; height: 8px; background: #C6D93C; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In build</span></div>
-              <div style="font-size: clamp(21px, 2.2vw, 30px); font-weight: 200; letter-spacing: -0.01em; line-height: 1.15;">Seizan Responsa</div>
-            </div>
-            <div style="min-width: 0;">
-              <div style="font-size: clamp(17px, 1.7vw, 21px); font-weight: 300; line-height: 1.5; text-wrap: pretty;">Knows what your business will and won&#x27;t sign, and holds every tender and contract to it.</div>
-              <div style="margin-top: 8px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #6F6A62; text-wrap: pretty;">Same standard, every time.</div>
-            </div>
-          </div>
-          <div data-reveal="1" data-delay="180" style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: clamp(22px, 4vw, 72px); align-items: baseline; padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
-            <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;"><span style="width: 8px; height: 8px; border: 1px solid rgba(239,233,223,0.35); flex: 0 0 auto; box-sizing: border-box;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
-              <div style="font-size: clamp(21px, 2.2vw, 30px); font-weight: 200; letter-spacing: -0.01em; line-height: 1.15;">Operations platform</div>
-            </div>
-            <div style="min-width: 0;">
-              <div style="font-size: clamp(17px, 1.7vw, 21px); font-weight: 300; line-height: 1.5; text-wrap: pretty;">Carries one job from the first enquiry through to the invoice.</div>
-              <div style="margin-top: 8px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #6F6A62; text-wrap: pretty;">The schedule proposes itself; your planners approve it rather than build it.</div>
-            </div>
-          </div>
-          <div data-reveal="1" data-delay="270" style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: clamp(22px, 4vw, 72px); align-items: baseline; padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
-            <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;"><span style="width: 8px; height: 8px; border: 1px solid rgba(239,233,223,0.35); flex: 0 0 auto; box-sizing: border-box;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
-              <div style="font-size: clamp(21px, 2.2vw, 30px); font-weight: 200; letter-spacing: -0.01em; line-height: 1.15;">Lift planning</div>
-            </div>
-            <div style="min-width: 0;">
-              <div style="font-size: clamp(17px, 1.7vw, 21px); font-weight: 300; line-height: 1.5; text-wrap: pretty;">Lift planning stops being a specialist job.</div>
-              <div style="margin-top: 8px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #6F6A62; text-wrap: pretty;">The expert checks the work instead of starting it.</div>
-            </div>
-          </div>
-          <div data-reveal="1" data-delay="360" style="display: grid; grid-template-columns: minmax(200px, 300px) 1fr; gap: clamp(22px, 4vw, 72px); align-items: baseline; padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
-            <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;"><span style="width: 8px; height: 8px; border: 1px solid rgba(239,233,223,0.35); flex: 0 0 auto; box-sizing: border-box;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
-              <div style="font-size: clamp(21px, 2.2vw, 30px); font-weight: 200; letter-spacing: -0.01em; line-height: 1.15;">Safety technology</div>
-            </div>
-            <div style="min-width: 0;">
-              <div style="font-size: clamp(17px, 1.7vw, 21px); font-weight: 300; line-height: 1.5; text-wrap: pretty;">Safety problems the industry has worked around for years, solved properly.</div>
+              <div style="font-size: clamp(18px, 1.9vw, 26px); font-weight: 300; line-height: 1.45; text-wrap: pretty;">Takes the paperwork off the job, and the office sees the work as it happens.</div>
+            <div style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(239,233,223,0.52); max-width: 34em; text-wrap: pretty;">Nothing written up later, nothing guessed.</div>
             </div>
           </div>
         </div>
-        <div data-reveal="1" data-delay="500" style="margin-top: 34px; font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 44em;">
+        <div data-reveal="1" data-delay="70" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(48px, 7vw, 104px) 0;">
+          <div style="display: flex; align-items: center; gap: 13px; margin-bottom: 18px;"><span style="width: 9px; height: 9px; background: #C6D93C; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In build</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 62px); align-items: baseline;">
+            <h3 style="margin: 0; font-size: clamp(36px, 6.4vw, 94px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; min-width: 0;">Responsa</h3>
+            <div style="min-width: 0;">
+              <div style="font-size: clamp(18px, 1.9vw, 26px); font-weight: 300; line-height: 1.45; text-wrap: pretty;">Knows what your business will and won&#x27;t sign, and holds every tender and contract to it.</div>
+            <div style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(239,233,223,0.52); max-width: 34em; text-wrap: pretty;">Same standard, every time.</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="1" data-delay="140" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(34px, 4.5vw, 62px) 0;">
+          <div style="display: flex; align-items: center; gap: 13px; margin-bottom: 18px;"><span style="width: 9px; height: 9px; border: 1px solid rgba(239,233,223,0.4); box-sizing: border-box; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 62px); align-items: baseline;">
+            <h3 style="margin: 0; font-size: clamp(26px, 3.6vw, 52px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; min-width: 0;">Operations platform</h3>
+            <div style="min-width: 0;">
+              <div style="font-size: clamp(16px, 1.5vw, 20px); font-weight: 300; line-height: 1.45; text-wrap: pretty;">Carries one job from the first enquiry through to the invoice.</div>
+            <div style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(239,233,223,0.52); max-width: 34em; text-wrap: pretty;">The schedule proposes itself; your planners approve it rather than build it.</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="1" data-delay="210" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(34px, 4.5vw, 62px) 0;">
+          <div style="display: flex; align-items: center; gap: 13px; margin-bottom: 18px;"><span style="width: 9px; height: 9px; border: 1px solid rgba(239,233,223,0.4); box-sizing: border-box; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 62px); align-items: baseline;">
+            <h3 style="margin: 0; font-size: clamp(26px, 3.6vw, 52px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; min-width: 0;">Lift planning</h3>
+            <div style="min-width: 0;">
+              <div style="font-size: clamp(16px, 1.5vw, 20px); font-weight: 300; line-height: 1.45; text-wrap: pretty;">Lift planning stops being a specialist job.</div>
+            <div style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(239,233,223,0.52); max-width: 34em; text-wrap: pretty;">The expert checks the work instead of starting it.</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="1" data-delay="280" style="border-top: 1px solid rgba(111,106,98,0.28); padding: clamp(34px, 4.5vw, 62px) 0;">
+          <div style="display: flex; align-items: center; gap: 13px; margin-bottom: 18px;"><span style="width: 9px; height: 9px; border: 1px solid rgba(239,233,223,0.4); box-sizing: border-box; flex: 0 0 auto;"></span><span style="font-size: 10px; font-weight: 300; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(239,233,223,0.45);">In development</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 3vw, 62px); align-items: baseline;">
+            <h3 style="margin: 0; font-size: clamp(26px, 3.6vw, 52px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; min-width: 0;">Safety technology</h3>
+            <div style="min-width: 0;">
+              <div style="font-size: clamp(16px, 1.5vw, 20px); font-weight: 300; line-height: 1.45; text-wrap: pretty;">Safety problems the industry has worked around for years, solved properly.</div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="1" data-delay="420" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 22px; font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 44em;">
           If one of these is your problem, tell us while it is still being built. The early conversations are the ones that shape it.
         </div>
       </div>
     </section>
-
-    <section id="how" data-sec="How we work" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
+<section style="position: relative; height: 82vh; min-height: 520px; border-top: 1px solid rgba(111,106,98,0.28); overflow: hidden;">
+      <canvas id="szfield" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block;"></canvas>
+      <div style="position: absolute; left: clamp(22px, 5vw, 72px); bottom: clamp(48px, 8vw, 96px); right: clamp(22px, 5vw, 72px);">
+        <div style="overflow: hidden; padding-bottom: 0.08em;"><div data-wipe="1" style="font-size: clamp(24px, 3.6vw, 52px); font-weight: 200; line-height: 1.1; letter-spacing: -0.02em; transform: translateY(115%); transition: transform 1100ms cubic-bezier(0.16,0.84,0.3,1);">No grand replacement projects.</div></div>
+      </div>
+    </section>
+<section id="how" data-sec="How we work" data-fg="#2B2926" style="scroll-margin-top: 66px; background: #EFE9DF; color: #2B2926; padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
-          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">03</span>
-          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #C9C2B7;">How we work</span>
+          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #57534C;">03</span>
+          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #57534C;">How we work</span>
         </div>
-        <p data-reveal="1" data-delay="80" style="margin: 0 0 clamp(48px, 7vw, 96px); max-width: 38em; font-size: clamp(19px, 2.4vw, 32px); font-weight: 200; line-height: 1.45; text-wrap: pretty;">No grand replacement projects. We live the problem with you — feel the pinch points — and start where the biggest win is. Modern automation does the routine; people who've lived the work decide what matters.</p>
+        <p data-reveal="1" data-delay="80" style="margin: 0 0 clamp(48px, 7vw, 96px); max-width: 38em; font-size: clamp(19px, 2.4vw, 32px); font-weight: 200; line-height: 1.45; text-wrap: pretty;">We live the problem with you — feel the pinch points — and start where the biggest win is. Modern automation does the routine; people who've lived the work decide what matters.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(34px, 5vw, 72px); align-items: start;">
           <div style="position: sticky; top: 96px;">
             <div data-reveal="1" style="font-size: clamp(26px, 3.4vw, 44px); font-weight: 200; line-height: 1.1;">The loop</div>
-            <div data-reveal="1" data-delay="80" style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 22em;">Five moves, in order. Each one earns the right to the next.</div>
+            <div data-reveal="1" data-delay="80" style="margin-top: 14px; font-size: 15px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 22em;">Five moves, in order. Each one earns the right to the next.</div>
                       </div>
 
           <div style="grid-column: span 2; min-width: 0; position: relative; padding-left: clamp(22px, 4vw, 48px);">
-            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(111,106,98,0.28);">
-              <div data-chain-fill="1" style="position: absolute; left: 0; top: 0; width: 1px; height: 0; background: #EFE9DF;"></div>
-            </div>
+            <svg data-loop="1" aria-hidden="true" style="position: absolute; left: -7px; top: 0; width: 40px; height: 100%; overflow: visible; pointer-events: none;">
+              <path data-loop-track="1" fill="none" stroke="rgba(111,106,98,0.3)" stroke-width="1.2"></path>
+              <path data-loop-fill="1" fill="none" stroke="#2B2926" stroke-width="1.2" stroke-linecap="round"></path>
+              <g data-loop-nodes="1"></g>
+            </svg>
 
             <div data-chain="1" style="padding: clamp(14px, 2vw, 22px) 0; border-top: 1px solid rgba(111,106,98,0.28); opacity: 0.32; transition: opacity 600ms ease, transform 700ms cubic-bezier(0.16,0.84,0.3,1); transform: translateY(12px);">
               <div style="display: flex; align-items: baseline; gap: clamp(14px, 2.5vw, 34px); flex-wrap: wrap;">
                 <span data-chain-num="1" style="font-size: clamp(30px, 4.6vw, 64px); font-weight: 200; line-height: 1; letter-spacing: -0.02em; color: #6F6A62; transition: color 500ms ease; flex: 0 0 auto;">01</span>
                 <span style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.015em; flex: 0 0 auto; width: clamp(140px, 20vw, 240px);">Live it first</span>
-                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 28em; min-width: 0; text-wrap: pretty;">We work the problem the way your people do before we touch anything. Immersion beats a requirements document.</span>
+                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 28em; min-width: 0; text-wrap: pretty;">We work the problem the way your people do before we touch anything. Immersion beats a requirements document.</span>
               </div>
             </div>
 
@@ -332,7 +364,7 @@
               <div style="display: flex; align-items: baseline; gap: clamp(14px, 2.5vw, 34px); flex-wrap: wrap;">
                 <span data-chain-num="1" style="font-size: clamp(30px, 4.6vw, 64px); font-weight: 200; line-height: 1; letter-spacing: -0.02em; color: #6F6A62; transition: color 500ms ease; flex: 0 0 auto;">02</span>
                 <span style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.015em; flex: 0 0 auto; width: clamp(140px, 20vw, 240px);">Find</span>
-                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 28em; min-width: 0; text-wrap: pretty;">Where the time goes, where the double-handling is, where the cost is quietly growing in the background.</span>
+                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 28em; min-width: 0; text-wrap: pretty;">Where the time goes, where the double-handling is, where the cost is quietly growing in the background.</span>
               </div>
             </div>
 
@@ -340,7 +372,7 @@
               <div style="display: flex; align-items: baseline; gap: clamp(14px, 2.5vw, 34px); flex-wrap: wrap;">
                 <span data-chain-num="1" style="font-size: clamp(30px, 4.6vw, 64px); font-weight: 200; line-height: 1; letter-spacing: -0.02em; color: #6F6A62; transition: color 500ms ease; flex: 0 0 auto;">03</span>
                 <span style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.015em; flex: 0 0 auto; width: clamp(140px, 20vw, 240px);">Fix</span>
-                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 28em; min-width: 0; text-wrap: pretty;">The biggest win first. No grand replacement project, no rip-and-replace to make a point.</span>
+                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 28em; min-width: 0; text-wrap: pretty;">The biggest win first. No grand replacement project, no rip-and-replace to make a point.</span>
               </div>
             </div>
 
@@ -348,7 +380,7 @@
               <div style="display: flex; align-items: baseline; gap: clamp(14px, 2.5vw, 34px); flex-wrap: wrap;">
                 <span data-chain-num="1" style="font-size: clamp(30px, 4.6vw, 64px); font-weight: 200; line-height: 1; letter-spacing: -0.02em; color: #6F6A62; transition: color 500ms ease; flex: 0 0 auto;">04</span>
                 <span style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.015em; flex: 0 0 auto; width: clamp(140px, 20vw, 240px);">Prove</span>
-                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 28em; min-width: 0; text-wrap: pretty;">You see the difference in your own numbers, not in a report we wrote.</span>
+                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 28em; min-width: 0; text-wrap: pretty;">You see the difference in your own numbers, not in a report we wrote.</span>
               </div>
             </div>
 
@@ -357,7 +389,7 @@
               <div style="display: flex; align-items: baseline; gap: clamp(14px, 2.5vw, 34px); flex-wrap: wrap;">
                 <span data-chain-num="1" style="font-size: clamp(30px, 4.6vw, 64px); font-weight: 200; line-height: 1; letter-spacing: -0.02em; color: #6F6A62; transition: color 500ms ease; flex: 0 0 auto;">05</span>
                 <span style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 200; line-height: 1.05; letter-spacing: -0.015em; flex: 0 0 auto; width: clamp(140px, 20vw, 240px);">Repeat</span>
-                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #C9C2B7; max-width: 28em; min-width: 0; text-wrap: pretty;">Then on to the next biggest win. The work is a path, not a project with an end date.</span>
+                <span style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 28em; min-width: 0; text-wrap: pretty;">Then on to the next biggest win. The work is a path, not a project with an end date.</span>
               </div>
             </div>
           </div>
@@ -365,95 +397,81 @@
       </div>
     </section>
 
-    <section data-sec="What that looks like" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); background: #EFE9DF; color: #2B2926;">
+    
+    <section data-sec="What that looks like" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px) clamp(22px, 3vw, 34px);">
       <div style="max-width: 1440px; margin: 0 auto;">
-        <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
+        <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(22px, 3vw, 34px);">
           <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #9D4A34;">04</span>
-          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #57534C;">What that looks like</span>
+          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #C9C2B7;">What that looks like</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(34px, 4vw, 48px);">
-          <div>
-            <div data-draw="1" style="height: 1px; background: rgba(111,106,98,0.4); margin-bottom: 22px;"></div>
-            <div data-reveal="1" data-delay="60">
-              <h3 style="margin: 0 0 14px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 300; line-height: 1.2;">Automate the routine</h3>
-              <p style="margin: 0; font-size: 16px; font-weight: 300; line-height: 1.66; color: #57534C; text-wrap: pretty;">Paperwork, inductions, follow-ups — the routine work that consumes your admin time, handled by the system, not the team.</p>
-            </div>
+        <div style="border-top: 1px solid rgba(111,106,98,0.28);">
+          <div data-reveal="1" data-delay="0" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(22px, 5vw, 96px); align-items: baseline; padding: clamp(28px, 4.5vw, 62px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
+            <h3 style="margin: 0; font-size: clamp(30px, 5.6vw, 82px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em;">Automate the routine</h3>
+            <p style="margin: 0; font-size: clamp(15px, 1.35vw, 18px); font-weight: 300; line-height: 1.66; color: #C9C2B7; max-width: 30em; text-wrap: pretty;">Paperwork, inductions, follow-ups — the routine work that consumes your admin time, handled by the system, not the team.</p>
           </div>
-          <div>
-            <div data-draw="1" data-delay="140" style="height: 1px; background: rgba(111,106,98,0.4); margin-bottom: 22px;"></div>
-            <div data-reveal="1" data-delay="200">
-              <h3 style="margin: 0 0 14px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 300; line-height: 1.2;">Connect what you have</h3>
-              <p style="margin: 0; font-size: 16px; font-weight: 300; line-height: 1.66; color: #57534C; text-wrap: pretty;">Your systems stop keeping secrets from each other. Entered once, used everywhere — and your people stop being the courier.</p>
-            </div>
+          <div data-reveal="1" data-delay="110" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(22px, 5vw, 96px); align-items: baseline; padding: clamp(28px, 4.5vw, 62px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
+            <h3 style="margin: 0; font-size: clamp(30px, 5.6vw, 82px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em;">Connect what you have</h3>
+            <p style="margin: 0; font-size: clamp(15px, 1.35vw, 18px); font-weight: 300; line-height: 1.66; color: #C9C2B7; max-width: 30em; text-wrap: pretty;">Your systems stop keeping secrets from each other. Entered once, used everywhere — and your people stop being the courier.</p>
           </div>
-          <div>
-            <div data-draw="1" data-delay="280" style="height: 1px; background: rgba(111,106,98,0.4); margin-bottom: 22px;"></div>
-            <div data-reveal="1" data-delay="340">
-              <h3 style="margin: 0 0 14px; font-size: clamp(22px, 2.4vw, 30px); font-weight: 300; line-height: 1.2;">See the numbers</h3>
-              <p style="margin: 0; font-size: 16px; font-weight: 300; line-height: 1.66; color: #57534C; text-wrap: pretty;">Know where you stand without asking anyone. The figures keep themselves up to date.</p>
-            </div>
+          <div data-reveal="1" data-delay="220" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(22px, 5vw, 96px); align-items: baseline; padding: clamp(28px, 4.5vw, 62px) 0; border-bottom: 1px solid rgba(111,106,98,0.28);">
+            <h3 style="margin: 0; font-size: clamp(30px, 5.6vw, 82px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em;">See the numbers</h3>
+            <p style="margin: 0; font-size: clamp(15px, 1.35vw, 18px); font-weight: 300; line-height: 1.66; color: #C9C2B7; max-width: 30em; text-wrap: pretty;">Know where you stand without asking anyone. The figures keep themselves up to date.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="why" data-sec="Why Seizan" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); background: #EFE9DF; color: #2B2926; border-top: 1px solid rgba(111,106,98,0.28);">
+    <section id="why" data-sec="Why Seizan" style="scroll-margin-top: 66px; padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); background: #EFE9DF; color: #2B2926; border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
           <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #57534C;">05</span>
           <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #57534C;">Why Seizan</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(34px, 5vw, 72px); align-items: start;">
-          <div style="position: sticky; top: 96px;">
-            <div style="font-size: clamp(30px, 4.4vw, 62px); font-weight: 200; line-height: 1.02; letter-spacing: -0.02em;">
-              <span style="display: block; overflow: hidden;"><span data-wipe="1" style="display: block; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">Precision,</span></span>
-              <span style="display: block; overflow: hidden;"><span data-wipe="1" data-delay="120" style="display: block; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">then the</span></span>
-              <span style="display: block; overflow: hidden;"><span data-wipe="1" data-delay="240" style="display: block; color: #57534C; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">awareness</span></span>
-              <span style="display: block; overflow: hidden;"><span data-wipe="1" data-delay="360" style="display: block; color: #57534C; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">that remains.</span></span>
-            </div>
-          </div>
-          <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column; gap: 22px; max-width: 44em;">
-            <p data-reveal="1" style="margin: 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 300; line-height: 1.75; text-wrap: pretty;">Seizan builds tools that make demanding work safer and sharper — software and systems that take the risk, the guesswork, and the double-handling out of the way a business runs. We solved our own problems first, and now build the same solutions for others whose work carries real consequences.</p>
-            <p data-reveal="1" style="margin: 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 300; line-height: 1.75; color: #57534C; text-wrap: pretty;">The name carries two ideas from judo, and the traditions behind it. <em style="font-style: italic; color: #2B2926;">Sei</em> is precision — doing the work properly, refusing the shortcut. <em style="font-style: italic; color: #2B2926;">Zan</em>, from <em style="font-style: italic;">zanshin</em>, is the awareness that remains: the vigilance that stays alert long after the task looks finished. Read another way, Seizan means "west mountain" — a quiet nod to where we're from, the west of Western Australia, home to some of the oldest ground on Earth, where ancient peaks have worn away to leave only the hardest, most enduring stone behind.</p>
-            <p data-reveal="1" style="margin: 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 300; line-height: 1.75; color: #57534C; text-wrap: pretty;">That enduring stone is what we're built on. Vigilance comes first — nothing slips through: not the hazard, not the error, not the cost quietly growing in the background. Precision comes with it — built carefully, tested properly, made to hold. And under both sits the value we won't compromise: in work that carries real consequences, integrity isn't a virtue, it's a requirement. We do exactly what we say, our data is honest, and we'll tell you the hard truth over the easy one every time.</p>
-            <p data-reveal="1" style="margin: 0; font-size: clamp(16px, 1.4vw, 19px); font-weight: 300; line-height: 1.75; color: #57534C; text-wrap: pretty;">Beneath all of it is a humility we take from the tradition: doing things right is a path with no finish line. We won't ever call the work perfect. We'll keep refining — and we hold it to one standard: it should leave every client, crew, and partner better off than we found them.</p>
-          </div>
+        <div style="font-size: clamp(32px, 6.6vw, 104px); font-weight: 200; line-height: 0.98; letter-spacing: -0.03em; margin-bottom: clamp(34px, 5vw, 72px);">
+          <span style="display: block; overflow: hidden; padding-bottom: 0.04em;"><span data-wipe="1" style="display: block; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">Precision, then the</span></span>
+          <span style="display: block; overflow: hidden; padding-bottom: 0.04em;"><span data-wipe="1" data-delay="140" style="display: block; color: #57534C; transform: translateY(115%); transition: transform 1000ms cubic-bezier(0.16,0.84,0.3,1);">awareness that remains.</span></span>
+        </div>
+        <div data-reveal="1" style="columns: 2 320px; column-gap: clamp(34px, 5vw, 72px); column-rule: 1px solid rgba(111,106,98,0.28);">
+            <p style="margin: 0 0 22px; font-size: clamp(15px, 1.25vw, 17px); font-weight: 300; line-height: 1.7; color: #2B2926; text-wrap: pretty; break-inside: avoid;">Seizan builds tools that make demanding work safer and sharper — software and systems that take the risk, the guesswork, and the double-handling out of the way a business runs. We solved our own problems first, and now build the same solutions for others whose work carries real consequences.</p>
+            <p style="margin: 0 0 22px; font-size: clamp(15px, 1.25vw, 17px); font-weight: 300; line-height: 1.7; color: #57534C; text-wrap: pretty; break-inside: avoid;">The name — Seizan <span style="color:#6F6A62;">(say-zahn)</span> — carries two ideas from judo, and the traditions behind it. <em style="font-style: italic; font-weight: 400; font-size: 1.22em; color: #2B2926; letter-spacing: -0.01em; box-shadow: inset 0 -0.2em 0 rgba(198,217,60,0.85); padding: 0 0.04em;">Sei</em> is precision — doing the work properly, refusing the shortcut. <em style="font-style: italic; font-weight: 400; font-size: 1.22em; color: #2B2926; letter-spacing: -0.01em; box-shadow: inset 0 -0.2em 0 rgba(198,217,60,0.85); padding: 0 0.04em;">Zan</em>, from <em style="font-style: italic;"><span style="font-weight: 400; color: #2B2926; box-shadow: inset 0 -0.16em 0 rgba(198,217,60,0.6);">zan</span>shin</em>, is the awareness that remains: the vigilance that stays alert long after the task looks finished. Read another way, Seizan means "west mountain" — a quiet nod to where we're from, the west of Western Australia, home to some of the oldest ground on Earth, where ancient peaks have worn away to leave only the hardest, most enduring stone behind.</p>
+            <p style="margin: 0 0 22px; font-size: clamp(15px, 1.25vw, 17px); font-weight: 300; line-height: 1.7; color: #57534C; text-wrap: pretty; break-inside: avoid;">That enduring stone is what we're built on. Vigilance comes first — nothing slips through: not the hazard, not the error, not the cost quietly growing in the background. Precision comes with it — built carefully, tested properly, made to hold. And under both sits the value we won't compromise: in work that carries real consequences, integrity isn't a virtue, it's a requirement. We do exactly what we say, our data is honest, and we'll tell you the hard truth over the easy one every time.</p>
+            <p style="margin: 0 0 22px; font-size: clamp(15px, 1.25vw, 17px); font-weight: 300; line-height: 1.7; color: #57534C; text-wrap: pretty; break-inside: avoid;">Beneath all of it is a humility we take from the tradition: doing things right is a path with no finish line. We won't ever call the work perfect. We'll keep refining — and we hold it to one standard: it should leave every client, crew, and partner better off than we found them.</p>
+            
         </div>
       </div>
     </section>
 
-    <section data-sec="What we hold to" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); background: #EFE9DF; color: #2B2926; border-top: 1px solid rgba(111,106,98,0.28);">
+    <section data-sec="What we hold to" style="padding: clamp(48px, 7vw, 96px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
-          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #57534C;">06</span>
-          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #57534C;">What we hold to</span>
+          <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">06</span>
+          <span style="font-size: 10px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: #C9C2B7;">What we hold to</span>
         </div>
-        <div style="display: flex; flex-direction: column;">
-          <div data-value="1" style="border-top: 1px solid rgba(111,106,98,0.28); padding: 22px 0; display: flex; flex-wrap: wrap; gap: 14px clamp(22px, 4vw, 48px); align-items: baseline; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1);">
-            <div style="flex: 0 0 auto; width: clamp(170px, 26vw, 320px); font-size: clamp(24px, 3vw, 40px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em;">Precision <span style="font-size: 0.42em; color: #6F6A62;">· <em style="font-style: italic; color: #2B2926; position: relative;">sei<span data-ul="1" style="position: absolute; left: 0; right: 0; bottom: -0.16em; height: 1px; background: #2B2926; transform: scaleX(0); transform-origin: left; transition: transform 700ms cubic-bezier(0.16,0.84,0.3,1) 300ms;"></span></em></span></div>
-            <div style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 32em; min-width: 0; text-wrap: pretty;">No shortcuts. Built carefully, tested properly, made to hold.</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: clamp(22px, 3vw, 44px);">
+          <div data-value="1" data-delay="0" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 18px; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1); min-width: 0;">
+            <div style="font-size: clamp(20px, 2.1vw, 28px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 14px;">Precision <span style="font-size: 0.56em; color: #6F6A62;">· <em style="font-style: italic; font-weight: 400; color: #EFE9DF; position: relative;">sei<span data-ul="1" style="position: absolute; left: 0; right: 0; bottom: -0.18em; height: 2px; background: #C6D93C; transform: scaleX(0); transform-origin: left; transition: transform 700ms cubic-bezier(0.16,0.84,0.3,1) 300ms;"></span></em></span></div>
+            <div style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #C9C2B7; text-wrap: pretty;">No shortcuts. Built carefully, tested properly, made to hold.</div>
           </div>
-          <div data-value="1" style="border-top: 1px solid rgba(111,106,98,0.28); padding: 22px 0; display: flex; flex-wrap: wrap; gap: 14px clamp(22px, 4vw, 48px); align-items: baseline; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1);">
-            <div style="flex: 0 0 auto; width: clamp(170px, 26vw, 320px); font-size: clamp(24px, 3vw, 40px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em;">Vigilance <span style="font-size: 0.42em; color: #6F6A62;">· <em style="font-style: italic; color: #2B2926; position: relative;">zan<span data-ul="1" style="position: absolute; left: 0; right: 0; bottom: -0.16em; height: 1px; background: #2B2926; transform: scaleX(0); transform-origin: left; transition: transform 700ms cubic-bezier(0.16,0.84,0.3,1) 300ms;"></span></em><span style="color: #6F6A62;">shin</span></span></div>
-            <div style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 32em; min-width: 0; text-wrap: pretty;">The awareness that remains — nothing slips through.</div>
+          <div data-value="1" data-delay="90" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 18px; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1); min-width: 0;">
+            <div style="font-size: clamp(20px, 2.1vw, 28px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 14px;">Vigilance <span style="font-size: 0.56em; color: #6F6A62;">· <em style="font-style: italic; font-weight: 400; color: #EFE9DF; position: relative;">zan<span data-ul="1" style="position: absolute; left: 0; right: 0; bottom: -0.18em; height: 2px; background: #C6D93C; transform: scaleX(0); transform-origin: left; transition: transform 700ms cubic-bezier(0.16,0.84,0.3,1) 300ms;"></span></em><span style="color: #6F6A62;">shin</span></span></div>
+            <div style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #C9C2B7; text-wrap: pretty;">The awareness that remains — nothing slips through.</div>
           </div>
-          <div data-value="1" style="border-top: 1px solid rgba(111,106,98,0.28); padding: 22px 0; display: flex; flex-wrap: wrap; gap: 14px clamp(22px, 4vw, 48px); align-items: baseline; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1);">
-            <div style="flex: 0 0 auto; width: clamp(170px, 26vw, 320px); font-size: clamp(24px, 3vw, 40px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em;">Integrity</div>
-            <div style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 32em; min-width: 0; text-wrap: pretty;">We do exactly what we say. The hard truth over the easy one.</div>
+          <div data-value="1" data-delay="180" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 18px; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1); min-width: 0;">
+            <div style="font-size: clamp(20px, 2.1vw, 28px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 14px;">Integrity</div>
+            <div style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #C9C2B7; text-wrap: pretty;">We do exactly what we say. The hard truth over the easy one.</div>
           </div>
-          <div data-value="1" style="border-top: 1px solid rgba(111,106,98,0.28); padding: 22px 0; display: flex; flex-wrap: wrap; gap: 14px clamp(22px, 4vw, 48px); align-items: baseline; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1);">
-            <div style="flex: 0 0 auto; width: clamp(170px, 26vw, 320px); font-size: clamp(24px, 3vw, 40px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em;">Humility</div>
-            <div style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 32em; min-width: 0; text-wrap: pretty;">The work matters most. No ego in the room — just the learning that never stops.</div>
+          <div data-value="1" data-delay="270" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 18px; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1); min-width: 0;">
+            <div style="font-size: clamp(20px, 2.1vw, 28px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 14px;">Humility</div>
+            <div style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #C9C2B7; text-wrap: pretty;">The work matters most. No ego in the room — just the learning that never stops.</div>
           </div>
-          <div data-value="1" style="border-top: 1px solid rgba(111,106,98,0.28); border-bottom: 1px solid rgba(111,106,98,0.28); padding: 22px 0; display: flex; flex-wrap: wrap; gap: 14px clamp(22px, 4vw, 48px); align-items: baseline; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1);">
-            <div style="flex: 0 0 auto; width: clamp(170px, 26vw, 320px); font-size: clamp(24px, 3vw, 40px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em;">Mutual benefit</div>
-            <div style="font-size: 16px; font-weight: 300; line-height: 1.6; color: #57534C; max-width: 32em; min-width: 0; text-wrap: pretty;">Success is shared, or it isn't success. What lifts your business lifts ours.</div>
+          <div data-value="1" data-delay="360" style="border-top: 1px solid rgba(111,106,98,0.28); padding-top: 18px; opacity: 0.32; transform: translateY(14px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,0.84,0.3,1); min-width: 0;">
+            <div style="font-size: clamp(20px, 2.1vw, 28px); font-weight: 200; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 14px;">Mutual benefit</div>
+            <div style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #C9C2B7; text-wrap: pretty;">Success is shared, or it isn't success. What lifts your business lifts ours.</div>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="start" data-sec="Start" style="padding: clamp(72px, 10vw, 120px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
+<section id="start" data-sec="Start" style="scroll-margin-top: 66px; padding: clamp(72px, 10vw, 120px) clamp(22px, 5vw, 72px); border-top: 1px solid rgba(111,106,98,0.28);">
       <div style="max-width: 1440px; margin: 0 auto;">
         <div data-reveal="1" style="display: flex; align-items: baseline; gap: 22px; margin-bottom: clamp(34px, 5vw, 72px);">
           <span style="font-size: 10px; font-weight: 400; letter-spacing: 0.24em; color: #C9C2B7;">07</span>
@@ -552,9 +570,51 @@
     self.cols = q('[data-col]');
     self.secs = q('[data-sec]');
     self.parallax = q('[data-parallax]');
-    self.chainFill = document.querySelector('[data-chain-fill]');
+    self.loop = document.querySelector('[data-loop]');
+    self.loopTrack = document.querySelector('[data-loop-track]');
+    self.loopFill = document.querySelector('[data-loop-fill]');
+    self.loopNodeG = document.querySelector('[data-loop-nodes]');
+    self.loopNodes = [];
+    self.loopLen = 0;
+    self.loopFg = self.loop && self.loop.closest('[data-fg]') ? self.loop.closest('[data-fg]').dataset.fg : '#EFE9DF';
+    self.buildLoop = function(){
+      if (!self.loop || !self.chain.length) return;
+      var host = self.loop.parentElement.getBoundingClientRect();
+      var pts = self.chain.map(function(el, i){
+        var r = el.getBoundingClientRect();
+        return { x: (i % 2 === 0) ? 7 : 20, y: r.top - host.top + r.height / 2 };
+      });
+      var d = 'M7,0';
+      var px = 7, py = 0;
+      pts.forEach(function(p){
+        var m = (py + p.y) / 2;
+        d += ' C' + px + ',' + m.toFixed(1) + ' ' + p.x + ',' + m.toFixed(1) + ' ' + p.x + ',' + p.y.toFixed(1);
+        px = p.x; py = p.y;
+      });
+      var end = host.height;
+      d += ' C' + px + ',' + ((py + end) / 2).toFixed(1) + ' 7,' + ((py + end) / 2).toFixed(1) + ' 7,' + end.toFixed(1);
+      self.loopTrack.setAttribute('d', d);
+      self.loopFill.setAttribute('d', d);
+      self.loopFill.setAttribute('stroke', self.loopFg);
+      self.loopLen = self.loopFill.getTotalLength();
+      self.loopFill.style.strokeDasharray = self.loopLen;
+      self.loopFill.style.strokeDashoffset = self.loopLen;
+      self.loopNodeG.innerHTML = '';
+      self.loopNodes = pts.map(function(p){
+        var c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        c.setAttribute('cx', p.x); c.setAttribute('cy', p.y.toFixed(1)); c.setAttribute('r', 4.5);
+        c.setAttribute('fill','transparent'); c.setAttribute('stroke','rgba(111,106,98,0.55)');
+        c.setAttribute('stroke-width','1.2');
+        c.style.transition = 'fill 420ms ease, stroke 420ms ease';
+        self.loopNodeG.appendChild(c);
+        return c;
+      });
+    };
     self.chainCount = document.querySelector('[data-chain-count]');
     self.progress = document.querySelector('[data-progress]');
+    self.bar = document.querySelector('[data-bar]');
+    self.barlinks = Array.prototype.slice.call(document.querySelectorAll('[data-barlink]'));
+    self.hero = document.querySelector('[data-sec="Hero"]');
     self.tickNum = document.querySelector('[data-ticker-num]');
     self.tickLabel = document.querySelector('[data-ticker-label]');
 
@@ -587,15 +647,21 @@
         if (on) lit = i + 1;
         el.style.opacity = on ? '1' : '0.32';
         if (!self.reduced) el.style.transform = on ? 'none' : 'translateY(12px)';
-        el.querySelectorAll('[data-chain-num]').forEach(n => { n.style.color = on ? '#EFE9DF' : '#6F6A62'; });
+        var fg = (el.closest('[data-fg]') || {dataset:{}}).dataset.fg || '#EFE9DF';
+        el.querySelectorAll('[data-chain-num]').forEach(n => { n.style.color = on ? fg : '#6F6A62'; });
       });
       if (self.chainCount) self.chainCount.textContent = 'Step ' + String(lit).padStart(2, '0') + ' / 05';
-      if (self.chainFill && self.chain.length) {
-        const first = self.chain[0].getBoundingClientRect();
-        const last = self.chain[self.chain.length - 1].getBoundingClientRect();
-        const span = Math.max(1, last.bottom - first.top);
-        const cp = Math.max(0, Math.min(1, (vh * 0.72 - first.top) / span));
-        self.chainFill.style.height = (cp * 100) + '%';
+      if (self.loop && self.chain.length) {
+        var first = self.chain[0].getBoundingClientRect();
+        var last = self.chain[self.chain.length - 1].getBoundingClientRect();
+        var span = Math.max(1, last.bottom - first.top);
+        var cp = Math.max(0, Math.min(1, (vh * 0.72 - first.top) / span));
+        if (self.loopLen) self.loopFill.style.strokeDashoffset = (self.loopLen * (1 - cp)).toFixed(1);
+        self.loopNodes.forEach(function(n, i){
+          var on = i < lit;
+          n.setAttribute('fill', on ? (self.loopFg || '#2B2926') : 'transparent');
+          n.setAttribute('stroke', on ? (self.loopFg || '#2B2926') : 'rgba(111,106,98,0.55)');
+        });
       }
 
       if (self.tickNum) {
@@ -606,12 +672,22 @@
         if (self.tickNum.textContent !== num) self.tickNum.textContent = num;
         if (self.tickLabel.textContent !== label) self.tickLabel.textContent = label;
       }
+      if (self.bar) {
+        var on = sy > (self.hero ? self.hero.offsetHeight * 0.75 : 400);
+        self.bar.style.opacity = on ? '1' : '0';
+        self.bar.style.transform = on ? 'none' : 'translateY(-100%)';
+        self.bar.style.pointerEvents = on ? 'auto' : 'none';
+        var cur = self.secs[Math.max(0, (function(){var a=0; self.secs.forEach(function(x,i){ if(x.getBoundingClientRect().top <= vh*0.42) a=i; }); return a;})())];
+        var id = cur ? cur.id : '';
+        self.barlinks.forEach(function(l){ l.style.color = (id && l.getAttribute('data-barlink') === '#'+id) ? '#EFE9DF' : '#C9C2B7'; });
+      }
       self.raf = 0;
     };
 
+    self.buildLoop();
     self.onScroll = () => { if (!self.raf) self.raf = requestAnimationFrame(self.tick); };
     window.addEventListener('scroll', self.onScroll, { passive: true });
-    window.addEventListener('resize', self.onScroll);
+    window.addEventListener('resize', function(){ self.buildLoop(); self.onScroll(); });
     self.tick();
 
     const magnet = document.querySelector('[data-magnet]');
@@ -631,6 +707,148 @@
       self.wipes.forEach(el => { el.style.transform = 'none'; });
       self.cuts.forEach(el => { el.style.clipPath = 'inset(0 0 0 0)'; });
     }, 6000);
+})();
+</script>
+<script>
+(function(){
+  var cv=document.getElementById('szfield'); if(!cv) return;
+  var ctx=cv.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,DPR=1,COLS=0,ROWS=0,CELL=0,field=[],t=0,vis=false;
+  function hash(i,j,s){var n=Math.sin(i*127.1+j*311.7+s*74.7)*43758.5453;return n-Math.floor(n);}
+  function sm(a){return a*a*(3-2*a);}
+  function vn(x,y,s){var xi=Math.floor(x),yi=Math.floor(y),xf=sm(x-xi),yf=sm(y-yi);
+    var a=hash(xi,yi,s),b=hash(xi+1,yi,s),c=hash(xi,yi+1,s),d=hash(xi+1,yi+1,s);
+    var u=a+(b-a)*xf; return u+((c+(d-c)*xf)-u)*yf;}
+  function fbm(x,y,s){return vn(x,y,s)*0.55+vn(x*2.1,y*2.1,s+11)*0.28+vn(x*4.3,y*4.3,s+23)*0.17;}
+  function resize(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    var r=cv.getBoundingClientRect(); W=Math.max(r.width,320); H=Math.max(r.height,320);
+    cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    CELL=W>900?13:16; COLS=Math.ceil(W/CELL)+1; ROWS=Math.ceil(H/CELL)+1;
+  }
+  function build(){
+    var cx=W*0.70, cy=H*0.80, rx=W*0.54, ry=H*0.78;
+    field=new Float32Array(COLS*ROWS);
+    var f=0.0042, drift=t*0.05, ax=W*0.26, ay=H*0.26;
+    for(var j=0;j<ROWS;j++)for(var i=0;i<COLS;i++){
+      var x=i*CELL,y=j*CELL;
+      var wx=(fbm(x*f+drift,y*f,3.0)-0.5)*ax, wy=(fbm(x*f+9.1,y*f+drift,7.0)-0.5)*ay;
+      var dx=(x+wx-cx)/rx, dy=(y+wy-cy)/ry;
+      field[j*COLS+i]=Math.exp(-(dx*dx+dy*dy)*1.25);
+    }
+  }
+  function seg(x1,y1,v1,x2,y2,v2,lv){var d=(v2-v1); if(Math.abs(d)<1e-6)d=1e-6; var m=(lv-v1)/d;
+    return [x1+(x2-x1)*m, y1+(y2-y1)*m];}
+  function ln(p,q){ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var LEVELS=17;
+    for(var L=1;L<LEVELS;L++){
+      var lv=L/LEVELS, alpha=0.13+0.25*(L/LEVELS), sig=(L===11);
+      ctx.beginPath();
+      for(var j=0;j<ROWS-1;j++)for(var i=0;i<COLS-1;i++){
+        var x=i*CELL,y=j*CELL;
+        var a=field[j*COLS+i],b=field[j*COLS+i+1],c=field[(j+1)*COLS+i+1],d=field[(j+1)*COLS+i];
+        var st=(a>lv?1:0)|(b>lv?2:0)|(c>lv?4:0)|(d>lv?8:0);
+        if(st===0||st===15) continue;
+        var T=seg(x,y,a,x+CELL,y,b,lv), R=seg(x+CELL,y,b,x+CELL,y+CELL,c,lv),
+            Bt=seg(x+CELL,y+CELL,c,x,y+CELL,d,lv), Lf=seg(x,y+CELL,d,x,y,a,lv);
+        switch(st){
+          case 1: case 14: ln(Lf,T); break;
+          case 2: case 13: ln(T,R); break;
+          case 3: case 12: ln(Lf,R); break;
+          case 4: case 11: ln(R,Bt); break;
+          case 5: ln(Lf,Bt); ln(T,R); break;
+          case 6: case 9: ln(T,Bt); break;
+          case 7: case 8: ln(Lf,Bt); break;
+          case 10: ln(Lf,T); ln(R,Bt); break;
+        }
+      }
+      ctx.lineWidth=1;
+      ctx.strokeStyle = sig ? 'rgba(198,217,60,.95)' : 'rgba(158,151,141,'+alpha.toFixed(3)+')';
+      ctx.stroke();
+    }
+  }
+  var io=new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:0});
+  io.observe(cv);
+  resize(); build(); draw();
+  window.addEventListener('resize',function(){resize();build();draw();});
+  var last=0;
+  function loop(ts){
+    requestAnimationFrame(loop);
+    if(!vis||reduce) return;
+    if(ts-last<55) return;
+    last=ts; t+=0.016; build(); draw();
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+<script>
+(function(){
+  /* hero strata: fine horizontal bands, slowly warping */
+  var cv=document.getElementById('szstrata'); if(!cv) return;
+  var ctx=cv.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,DPR=1,t=0,vis=true;
+  function hash(i,j,s){var n=Math.sin(i*127.1+j*311.7+s*74.7)*43758.5453;return n-Math.floor(n);}
+  function sm(a){return a*a*(3-2*a);}
+  function vn(x,y,s){var xi=Math.floor(x),yi=Math.floor(y),xf=sm(x-xi),yf=sm(y-yi);
+    var a=hash(xi,yi,s),b=hash(xi+1,yi,s),c=hash(xi,yi+1,s),d=hash(xi+1,yi+1,s);
+    var u=a+(b-a)*xf; return u+((c+(d-c)*xf)-u)*yf;}
+  function fbm(x,y,s){return vn(x,y,s)*0.6+vn(x*2.3,y*2.3,s+13)*0.28+vn(x*4.7,y*4.7,s+29)*0.12;}
+  function resize(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    var r=cv.getBoundingClientRect(); W=Math.max(r.width,320); H=Math.max(r.height,320);
+    cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var BANDS=34, step=H/BANDS, amp=H*0.10, f=0.0016, sx=Math.max(7,Math.floor(W/170));
+    for(var b=0;b<BANDS;b++){
+      var y0=b*step+step*0.5;
+      var edge=Math.min(b,BANDS-1-b)/(BANDS*0.5);
+      var w8=1-edge;
+      var a=0.07+0.21*w8;
+      var sig=(b===32);
+      ctx.beginPath();
+      for(var x=0;x<=W;x+=sx){
+        var w=(fbm(x*f+t*0.06, b*0.42, 5.0)-0.5)*amp*(0.40+0.60*w8);
+        var y=y0+w;
+        if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      }
+      ctx.lineWidth=1;
+      ctx.strokeStyle= sig ? 'rgba(198,217,60,0.5)' : 'rgba(158,151,141,'+a.toFixed(3)+')';
+      ctx.stroke();
+    }
+  }
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting;},{threshold:0}).observe(cv);
+  resize(); draw();
+  window.addEventListener('resize',function(){resize();draw();});
+  var last=0;
+  function loop(ts){ requestAnimationFrame(loop);
+    if(!vis||reduce) return; if(ts-last<70) return; last=ts; t+=0.02; draw(); }
+  requestAnimationFrame(loop);
+
+  /* sound-familiar diagram: draw the split on scroll */
+  var wrap=document.querySelector('[data-split]'); if(!wrap) return;
+  var paths=Array.prototype.slice.call(wrap.querySelectorAll('[data-sp]'));
+  var sqs=Array.prototype.slice.call(wrap.querySelectorAll('[data-sqr]'));
+  paths.forEach(function(p,i){
+    var L=p.getTotalLength();
+    p.style.strokeDasharray=L; p.style.strokeDashoffset=reduce?0:L;
+    p.style.transition='stroke-dashoffset 1500ms cubic-bezier(0.16,0.84,0.3,1) '+(i*230)+'ms';
+  });
+  sqs.forEach(function(q,i){
+    q.style.opacity=reduce?1:0;
+    q.style.transition='opacity 600ms ease '+(420+i*230)+'ms';
+  });
+  new IntersectionObserver(function(es,o){
+    es.forEach(function(e){ if(!e.isIntersecting) return;
+      paths.forEach(function(p){p.style.strokeDashoffset=0;});
+      sqs.forEach(function(q){q.style.opacity=1;});
+      o.unobserve(e.target); });
+  },{rootMargin:'0px 0px -10% 0px'}).observe(wrap);
 })();
 </script>
 </body>
